@@ -12,6 +12,7 @@ describe('Test for CSOS UI', function() {
                 expect(title).to.be.equal(obj.title);
             })
             .saveScreenshot('./screenshots/shot23.png')
+
             .end();
     });
 });

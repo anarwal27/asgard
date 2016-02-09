@@ -22,7 +22,9 @@
     "gulp-shell": "^0.5.1",
     "mocha": "^2.3.4",
     "selenium-standalone": "^4.7.1",
-    "webdriverio": "^3.2.6"
+    "wdio-mocha-framework": "^0.2.9",
+    "webdriverio": "^4.0.1"
+
   },
   "description": "UI Tests",
   "main": "csosTest.js",
