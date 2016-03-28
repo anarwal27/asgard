@@ -1,19 +1,17 @@
-var chai = require('chai'),
-    expect = chai.expect,
-    obj = require('./test.json');
+var webdriverio = require('webdriverio'),
+    chai = require('chai'),
+    expect = chai.expect;
+var common=require("./common/commonlib.js");
 
 describe('Test for CSOS UI', function() {
+
+    //verify page object creation
     it('should load correct Login page and title', function () {
         return browser
-            .windowHandleMaximize()
-            .url('http://google.com')
-            .pause(1000)
-            //.getTitle().then( function (title) {
-        //        expect(title).to.be.equal(obj.title);
-        //    })
-            .saveScreenshot('./screenshots/shot23.png')
-            .setValue(".//*[@id='gs_htif0']", WebdriverIO)
-            .click(".//*[@id='sblsbb']/button")
-            .end();
+            .titleVerify();
     });
+
+    it('verify search function', function(){
+        common.verifySearch();
+    })
 });
