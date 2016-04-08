@@ -1,7 +1,7 @@
 var webdriverio = require('webdriverio'),
     chai = require('chai');
     expect=chai.expect;
-    obj = require('../test.json');
+    obj = require('../resources/test.json');
 
 function verifyTitle(browser){
     browser.addCommand("getUrlAndTitle", function(customVar) {

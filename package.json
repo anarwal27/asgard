@@ -4,7 +4,8 @@
   "author": "Abhimanyu Narwal <anarwal.27@gmail.com>",
   "private": true,
   "scripts": {
-    "test": "wdio wdio.conf.js"
+    "test": "gulp test",
+    "report": "allure generate allure-results && allure report open"
   },
   "dependencies": {
     "body-parser": "~1.13.2",

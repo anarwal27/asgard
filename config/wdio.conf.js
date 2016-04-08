@@ -1,7 +1,7 @@
 exports.config = {
 
     specs: [
-        'src/pageObjects/*test.js'
+        'src/pageObjects/pagetest.js'
     ],
 
     exclude: [
@@ -10,21 +10,18 @@ exports.config = {
 
     maxInstances:1,
 
-    capabilities: [{
+    capabilities: [
+        {
             browserName: 'chrome'
         },
-        //{
-        //    browserName: 'internet explorer'
-        //},
-        {
+            {
             browserName: 'firefox'
-    }],
+    }
+    ],
 
     // ===================
     // Test Configurations
     // ===================
-
-    services: ['selenium-standalone'],
 
     sync: true,
     //
@@ -34,7 +31,7 @@ exports.config = {
     coloredLogs: true,
     //
     // Saves a screenshot to a given path if a command fails.
-    screenshotPath: '../errorShots/',
+   // screenshotPath: '',
     //
     // Default timeout for all waitForXXX commands.
     waitforTimeout: 30000,
@@ -67,6 +64,7 @@ exports.config = {
                    chai = require('chai');
                    expect=chai.expect;
                    moment=require('moment');
+        browser.url('/');
         return browser.windowHandleMaximize()
     },
 
@@ -76,7 +74,7 @@ exports.config = {
 
     afterTest: function(result) {
         if(!result.passed){
-            return browser.saveScreenshot(result.currentTest + moment().unix() +'.png')
+            return browser.saveScreenshot("../errorShots/shot"+result.currentTest + moment().unix() +'.png')
         }
     },
 
