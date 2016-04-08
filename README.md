@@ -4,9 +4,6 @@ A UI Test Framework
 Webdriver IO Tests
 =========================
 
-This example is based on:
-https://github.com/onewiththehammer/web-driver-io-tutorial-git
-
 
 ## Todo
 * Research and add functional tests using Webdriver IO
@@ -34,6 +31,6 @@ selenium-standalone start
 ### Running Tests
 Use the following command to run tests
 ```
-mocha pageTest.js
+mocha pagetest.js
 ```
 
