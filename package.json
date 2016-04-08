@@ -1,10 +1,10 @@
 {
-  "name": "csos-uitesting",
+  "name": "asgard.js",
   "version": "0.0.0",
   "author": "Abhimanyu Narwal <anarwal.27@gmail.com>",
   "private": true,
   "scripts": {
-    "test": "gulp test"
+    "test": "wdio wdio.conf.js"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -27,10 +27,9 @@
     "selenium-standalone": "^4.7.1",
     "wdio-allure-reporter": "0.0.2",
     "wdio-mocha-framework": "^0.2.9",
-    "webdriverio": "^4.0.3"
+    "wdio-selenium-standalone-service": "0.0.1",
+    "webdriverio": "^4.0.5"
   },
-  "description": "UI Tests",
-  "main": "csosTest.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/anarwal/asgard.git"

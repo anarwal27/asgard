@@ -34,6 +34,6 @@ selenium-standalone start
 ### Running Tests
 Use the following command to run tests
 ```
-mocha csosTest.js
+mocha pageTest.js
 ```
 
