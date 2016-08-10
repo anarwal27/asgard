@@ -4,35 +4,21 @@
   "author": "Abhimanyu Narwal <anarwal.27@gmail.com>",
   "private": true,
   "scripts": {
-    "test": "gulp test",
+    "test": "wdio config/wdio.conf.js",
     "report": "allure generate allure-results && allure report open"
   },
-  "dependencies": {
-    "body-parser": "~1.13.2",
-    "cookie-parser": "~1.3.5",
-    "debug": "~2.2.0",
-    "express": "~4.13.1",
-    "jade": "~1.11.0",
-    "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "allure-commandline": "^1.4.22-1",
     "chai": "^3.4.1",
-    "cheerio": "^0.20.0",
-    "chromedriver": "^2.20.0",
-    "gulp": "^3.9.0",
-    "gulp-shell": "^0.5.1",
-    "mocha": "^2.3.4",
     "moment": "^2.10.6",
-    "selenium-standalone": "^4.7.1",
-    "wdio-allure-reporter": "0.0.2",
-    "wdio-mocha-framework": "^0.2.9",
-    "wdio-selenium-standalone-service": "0.0.1",
-    "webdriverio": "^4.0.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/anarwal/asgard.git"
+    "node-rest-client": "^1.8.0",
+    "wdio-allure-reporter": "0.1.0",
+    "wdio-junit-reporter": "^0.0.2",
+    "wdio-mocha-framework": "^0.3.4",
+    "wdio-selenium-standalone-service": "^0.0.5",
+    "wdio-spec-reporter": "0.0.3",
+    "wdio-sync": "^0.5.5",
+    "webdriverio": "^4.1.1"
   }
 }

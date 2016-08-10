@@ -1,21 +1,22 @@
-var obj = require('../resources/test.json');
+var objData = require('../resources/assertions/testData.json');
+var objSelector = require('../resources/selectors/testSelector.json');
 
-describe('Test Samples', function() {
+describe('Sample Test', function() {
 
-    //verify page object creation
-    it('test for sample', function(){
-
+    //verify page title
+    it('testForTitle', function(){
         var title = browser.getTitle();
-        expect(title).to.be.equal(obj.title);
+        expect(title).to.be.equal(objData.page.title);
     });
+    
+    //Search something in Google
 
-
-    //it('should load correct Login page and title', function () {
-    //    browser.getUrlAndTitle('a custom variable',function(err,result){
-    //            assert.equal(null, err);
-    //            assert.strictEqual(result.url,'https://google.com/');
-    //            assert.strictEqual(result.title,'Google');
-    //        })
-    //});
+    //this needs to be fixed yet
+    
+    // it('searchGoogle', function(){
+    //     browser.pause(5000);
+    //     browser.setValue(objSelector.selectors.searchText, "Search");
+    //     browser.waitForVisibleAndClick(objSelector.selectors.searchValue);
+    // });
 
 });

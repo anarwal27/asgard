@@ -1,7 +1,7 @@
 exports.config = {
 
     specs: [
-        'src/pageObjects/pagetest.js'
+        'src/pageObjects/*test.js'
     ],
 
     exclude: [
@@ -13,26 +13,27 @@ exports.config = {
     capabilities: [
         {
             browserName: 'chrome'
-        },
-            {
-            browserName: 'firefox'
-    }
+        }
+        // },{
+        //     browserName: 'firefox'
+        //   }
     ],
 
     // ===================
     // Test Configurations
     // ===================
+    sync: true,
+
+    services: ['selenium-standalone'],
 
     sync: true,
-    //
+
+    // Set LogLevel: Verbose for more detailed logs
     logLevel: 'silent',
-    //
+
     // Enables colors for log output
     coloredLogs: true,
-    //
-    // Saves a screenshot to a given path if a command fails.
-   // screenshotPath: '',
-    //
+
     // Default timeout for all waitForXXX commands.
     waitforTimeout: 30000,
 
@@ -46,11 +47,13 @@ exports.config = {
     },
 
     // Test reporter for stdout.
-    reporters: ['dot', 'allure'],
+    reporters: ['spec', 'allure', 'junit'],
 
     reporterOptions: {
         allure: {
             outputDir: 'allure-results'
+        },   junit: {
+            outputDir: './junitreports/'
         }
     },
 
@@ -65,20 +68,34 @@ exports.config = {
                    expect=chai.expect;
                    moment=require('moment');
         browser.url('/');
-        return browser.windowHandleMaximize()
+        return browser.windowHandleMaximize();
+
+       var addCommands = require('../src/common/addCommands').add;
+       addCommands(browser);
+
+       //import all assertion and selector files in before function as they will be used throughout project and through different files
+
+       //as user needs to login to our application before performing any action, thus we provide login function in before function
     },
+
+    beforeTest: function (test) {
+       console.log("Test Case: "+ test.currentTest);
+   },
 
     after: function(failures, pid) {
         console.log('finish up the tests');
     },
 
     afterTest: function(result) {
-        if(!result.passed){
-            return browser.saveScreenshot("../errorShots/shot"+result.currentTest + moment().unix() +'.png')
-        }
+      if(!result.passed){
+           console.log('Test Failed');
+           return browser.saveScreenshot('errorShots/'+result.currentTest + moment().unix() +'.png')
+       }else {
+            console.log('Test Passed');
+       }
     },
 
     onComplete: function() {
-        console.log('that\'s it');
+        console.log('Testing Done!');
     }
 };

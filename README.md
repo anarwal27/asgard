@@ -17,20 +17,16 @@ npm install
 
 ### Building And Running
 
-npm test or gulp test
+npm test
 
-**NOTE** the above command with start selenium server and run tests, if not follow the steps below
+**NOTE** Allure-reporter generates allure report after every execution, in order to access the Allure Report
 
-#### Selenium-Standalone Server
-
-**Warning:** Make sure that your csos-ui server and Selenium-standalone server is running before running tests, use the following command to start standalone server
 ```
-selenium-standalone start
+npm run report
 ```
 
-### Running Tests
-Use the following command to run tests
-```
-mocha pagetest.js
-```
+**NOTE**
+ You can delete the new allure folder everytime before running tests if you want to see fresh exection report while running locally. On jenkins, jenkins takes
+ care of clearing workspace before starting execution.
+
 
