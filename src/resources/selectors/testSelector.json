@@ -1,0 +1,6 @@
+{
+  "selectors":{
+    "searchText":".//*[@id='gs_htif0']",
+    "searchValue": "=Search"
+  }
+}
