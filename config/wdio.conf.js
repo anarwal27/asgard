@@ -23,21 +23,20 @@ exports.config = {
     // Test Configurations
     // ===================
     sync: true,
-
-    services: ['selenium-standalone'],
-
-    sync: true,
-
-    // Set LogLevel: Verbose for more detailed logs
-    logLevel: 'silent',
+    logLevel: 'error',
 
     // Enables colors for log output
     coloredLogs: true,
 
     // Default timeout for all waitForXXX commands.
-    waitforTimeout: 30000,
+    waitforTimeout: (process.env.WAIT_FOR_TIMEOUT || 2000),
 
-    baseUrl: 'https://google.com',
+    //Configured timeout for html elements
+    var: waitTime = 8000,
+
+    // Point base host to lphxcm004.lab.phx.axway.int box only.
+    var: baseHost = (process.env.URL || 'www.google.come'),
+    
 
     framework: 'mocha',
 

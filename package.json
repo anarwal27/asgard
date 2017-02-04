@@ -4,7 +4,6 @@
   "author": "Abhimanyu Narwal <anarwal.27@gmail.com>",
   "private": true,
   "scripts": {
-    "mochatest": "wdio config/wdio.conf.js",
     "test": "wdio config/wdio.nodocker.conf.js",
     "docker_test": "wdio config/wdio.docker.conf.js",
     "report": "allure generate allure-results && allure report open"
