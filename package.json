@@ -4,21 +4,29 @@
   "author": "Abhimanyu Narwal <anarwal.27@gmail.com>",
   "private": true,
   "scripts": {
-    "test": "wdio config/wdio.conf.js",
+    "mochatest": "wdio config/wdio.conf.js",
+    "test": "wdio config/wdio.nodocker.conf.js",
+    "docker_test": "wdio config/wdio.docker.conf.js",
     "report": "allure generate allure-results && allure report open"
   },
-  "dependencies": {},
+  "dependencies": {
+    "deepmerge": "^1.2.0",
+    "npm": "^4.1.1"
+  },
   "devDependencies": {
-    "allure-commandline": "^1.4.22-1",
-    "chai": "^3.4.1",
-    "moment": "^2.10.6",
-    "node-rest-client": "^1.8.0",
-    "wdio-allure-reporter": "0.1.0",
-    "wdio-junit-reporter": "^0.0.2",
-    "wdio-mocha-framework": "^0.3.4",
-    "wdio-selenium-standalone-service": "^0.0.5",
-    "wdio-spec-reporter": "0.0.3",
-    "wdio-sync": "^0.5.5",
-    "webdriverio": "^4.1.1"
+    "chai": "3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "jwt-simple": "^0.5.0",
+    "moment": "2.15.2",
+    "node-rest-client": "2.0.1",
+    "request": "^2.76.0",
+    "request-promise": "^4.1.1",
+    "wdio-allure-reporter": "0.1.2",
+    "wdio-junit-reporter": "^0.1.0",
+    "wdio-mocha-framework": "0.4.6",
+    "wdio-selenium-standalone-service": "0.0.7",
+    "webdriverio": "4.5.0",
+    "wdio-sync": "0.6.8",
+    "wdio-spec-reporter": "0.0.3"
   }
 }
