@@ -9,10 +9,12 @@
     "docker_test": "wdio config/wdio.docker.conf.js",
     "report": "allure generate allure-results && allure report open"
   },
+
   "dependencies": {
     "deepmerge": "^1.2.0",
     "npm": "^4.1.1"
   },
+
   "devDependencies": {
     "chai": "3.5.0",
     "chai-as-promised": "^6.0.0",
