@@ -34,7 +34,6 @@ exports.config = {
     //Configured timeout for html elements
     var: waitTime = 8000,
 
-    // Point base host to lphxcm004.lab.phx.axway.int box only.
     var: baseHost = (process.env.URL || 'www.google.come'),
     
 
